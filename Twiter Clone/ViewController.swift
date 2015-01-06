@@ -27,7 +27,11 @@ class ViewController: UIViewController, UITableViewDataSource {
         let accounts = myTwitterAccountStore.accountsWithAccountType(myTwitterAccountType)
         if !accounts.isEmpty {
           let myTwitterAccount = accounts.first as ACAccount
-          let requestURL = NSURL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json")
+          
+          //bad account for testing
+          let requestURL = NSURL(string: "https://api.twitter.com/1.1/statuses/home_timeline.jso")
+          
+          //let requestURL = NSURL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json")
           let twitterRequest = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: SLRequestMethod.GET, URL: requestURL, parameters: nil)
           twitterRequest.account = myTwitterAccount
           twitterRequest.performRequestWithHandler(){ (data, response, error) -> Void in
@@ -53,7 +57,12 @@ class ViewController: UIViewController, UITableViewDataSource {
             case 300...599:
               
               //display my own alert message - TO DO
-              println("this is bad!")
+              let alertController = UIAlertController(title: "Bad Request", message:
+                "Please Try Again", preferredStyle: UIAlertControllerStyle.Alert)
+              alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+              
+              self.presentViewController(alertController, animated: true, completion: nil)
+              
             default:
               println("default case fired")
             }
