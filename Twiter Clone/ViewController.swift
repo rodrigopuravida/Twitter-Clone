@@ -33,15 +33,6 @@ class ViewController: UIViewController, UITableViewDataSource {
               }
           }
           
-          //this is just a test
-//          for var i = 0; i < tweets.count; i++ {
-//            println(self.tweets[i].text)
-//            println(self.tweets[i].user["name"])
-//            
-//          }
-          
-          //testing git
-          
         }
       
     }
