@@ -33,7 +33,6 @@ class ViewController: UIViewController, UITableViewDataSource {
           twitterRequest.performRequestWithHandler(){ (data, response, error) -> Void in
             switch response.statusCode {
             case 200...299:
-              println("this is great!")
               
               if let jsonArray = NSJSONSerialization.JSONObjectWithData(data, options: nil, error:nil) as? [AnyObject] {
                 
@@ -41,18 +40,19 @@ class ViewController: UIViewController, UITableViewDataSource {
                   if let jsonDictionary = object as? [String : AnyObject] {
                     let tweet = Tweet(jsonDictionary)
                     self.tweets.append(tweet)
+                    
                     NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                       
                       self.tweetTableView.reloadData()
                     })
                   }
                 }
-                
-                
-                
+          
               }
               
             case 300...599:
+              
+              //display my own alert message - TO DO
               println("this is bad!")
             default:
               println("default case fired")
@@ -77,10 +77,10 @@ class ViewController: UIViewController, UITableViewDataSource {
     var name = self.tweets[indexPath.row].user["name"] as String
     let tweet = self.tweets[indexPath.row]
     
-    //this before adding CustomTableViewCell.swift
-    
-    //cell.textLabel?.text = tweet.text + " by " + name
+    //this after adding CustomTableViewCell.swift - Day1
+
     cell.tweetCustomLabel.text = tweet.text + " by " + name
+    println(cell.tweetCustomLabel.text)
     cell.customImage.backgroundColor = UIColor.blueColor()
     
     
