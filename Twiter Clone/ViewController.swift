@@ -34,15 +34,18 @@ class ViewController: UIViewController, UITableViewDataSource {
           let myTwitterAccount = accounts.first as ACAccount
           
           //bad url for testing bad request codes- missing last 'n'
-          let requestURL = NSURL(string: "https://api.twitter.com/1.1/statuses/home_timeline.jso")
+          //let requestURL = NSURL(string: "https://api.twitter.com/1.1/statuses/home_timeline.jso")
           
           
           // this rest api found here - https://dev.twitter.com/rest/public
           
-          //let requestURL = NSURL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json")
+          let requestURL = NSURL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json")
           
           //sending the service request
           let twitterRequest = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: SLRequestMethod.GET, URL: requestURL, parameters: nil)
+          
+          
+          
           twitterRequest.account = myTwitterAccount
           
           //here comes the clousure that performs the 'in' section of code after response has been returned from the server
@@ -52,6 +55,7 @@ class ViewController: UIViewController, UITableViewDataSource {
             //request is succesful
             case 200...299:
               
+           
               if let jsonArray = NSJSONSerialization.JSONObjectWithData(data, options: nil, error:nil) as? [AnyObject] {
                 
                 for object in jsonArray {
@@ -76,16 +80,11 @@ class ViewController: UIViewController, UITableViewDataSource {
               
             case 300...599:
               
-              //this is UNDER CONSTRUCTION
+              println("Twitter HTTP response \(response.statusCode)")
               
-              var errorPointer : NSErrorPointer = nil
               
-              let badJsonArray = NSJSONSerialization.JSONObjectWithData(data, options: nil, error:nil) as? [AnyObject]
-              
-              println(badJsonArray)
-              
-              //display my own alert message - TO DO
-              let alertController = UIAlertController(title: "Bad Request", message:
+              //display my own alert message
+              let alertController = UIAlertController(title: "Twitter HTTP response \(response.statusCode)", message:
                 "Please Try Again", preferredStyle: UIAlertControllerStyle.Alert)
               alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
               
@@ -114,6 +113,10 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     //this var name is what gets the value of user form within user dictionary which is within json
     var name = self.tweets[indexPath.row].user["name"] as String
+    
+    //variable referencing the image for each tweet
+    var tweetImage = self.tweets[indexPath.row].user["profile_image_url"] as String
+    
     let tweet = self.tweets[indexPath.row]
     
     //this after adding CustomTableViewCell.swift - Day1
@@ -121,9 +124,20 @@ class ViewController: UIViewController, UITableViewDataSource {
     cell.tweetCustomLabel.text = tweet.text + " by " + name
     
     //setting image background to blue so we can see the image
-    //Would be nice to see the image from the Tweet
     cell.customImage.backgroundColor = UIColor.blueColor()
     
+    
+    //loading image from Tweet
+    
+    let imageURL = NSURL(string: tweetImage)
+    
+    
+      if let data = NSData(contentsOfURL: imageURL!){
+        //cell.customImage.contentMode = UIViewContentMode.ScaleAspectFit
+        cell.customImage.image = UIImage(data: data)
+      }
+
+
     
     return cell
   }
