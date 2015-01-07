@@ -16,6 +16,7 @@
 		480FF7B21A5B347E0092C74A /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480FF7B11A5B347E0092C74A /* Tweet.swift */; };
 		480FF7B41A5B34CC0092C74A /* tweet.json in Resources */ = {isa = PBXBuildFile; fileRef = 480FF7B31A5B34CC0092C74A /* tweet.json */; };
 		480FF7B61A5B521D0092C74A /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480FF7B51A5B521D0092C74A /* CustomTableViewCell.swift */; };
+		48C3D07B1A5DDC490032F376 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3D07A1A5DDC490032F376 /* NetworkController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		480FF7B11A5B347E0092C74A /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		480FF7B31A5B34CC0092C74A /* tweet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tweet.json; sourceTree = "<group>"; };
 		480FF7B51A5B521D0092C74A /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		48C3D07A1A5DDC490032F376 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			children = (
 				480FF78E1A5B2EE60092C74A /* AppDelegate.swift */,
 				480FF7901A5B2EE60092C74A /* ViewController.swift */,
+				48C3D07A1A5DDC490032F376 /* NetworkController.swift */,
 				480FF7B51A5B521D0092C74A /* CustomTableViewCell.swift */,
 			);
 			name = Controllers;
@@ -246,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48C3D07B1A5DDC490032F376 /* NetworkController.swift in Sources */,
 				480FF7B21A5B347E0092C74A /* Tweet.swift in Sources */,
 				480FF7911A5B2EE60092C74A /* ViewController.swift in Sources */,
 				480FF7B61A5B521D0092C74A /* CustomTableViewCell.swift in Sources */,
@@ -441,6 +445,7 @@
 				480FF7AA1A5B2EE60092C74A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		480FF7AB1A5B2EE60092C74A /* Build configuration list for PBXNativeTarget "Twiter CloneTests" */ = {
 			isa = XCConfigurationList;
@@ -449,6 +454,7 @@
 				480FF7AD1A5B2EE60092C74A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
