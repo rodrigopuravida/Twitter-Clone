@@ -17,38 +17,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="V2D-CW-Pod">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="111" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="V2D-CW-Pod">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TWEET_CELL" id="1nf-Wb-phl" customClass="CustomTableViewCell" customModule="Twiter_Clone" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TWEET_CELL" rowHeight="111" id="1nf-Wb-phl" customClass="CustomTableViewCell" customModule="Twiter_Clone" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1nf-Wb-phl" id="TQJ-el-8wT">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Wn-VO-I2P">
-                                                    <rect key="frame" x="107" y="0.0" width="407" height="36"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Wn-VO-I2P">
+                                                    <rect key="frame" x="107" y="0.0" width="485" height="104"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Q8-tQ-ggD">
-                                                    <rect key="frame" x="8" y="0.0" width="82" height="36"/>
+                                                    <rect key="frame" x="8" y="0.0" width="82" height="104"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="82" id="5CC-da-QFy"/>
+                                                        <constraint firstAttribute="height" constant="36" id="CUi-Fl-w4k"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="82" id="YOt-wJ-xQR"/>
                                                     </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="CUi-Fl-w4k"/>
+                                                        </mask>
+                                                    </variation>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="6Wn-VO-I2P" firstAttribute="bottom" secondItem="3Q8-tQ-ggD" secondAttribute="bottom" id="2NM-pp-euZ"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="6Wn-VO-I2P" secondAttribute="trailing" constant="78" id="99h-ZE-VUa"/>
-                                                <constraint firstItem="6Wn-VO-I2P" firstAttribute="leading" secondItem="3Q8-tQ-ggD" secondAttribute="trailing" constant="17" id="Fh3-5p-gKO"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="3Q8-tQ-ggD" secondAttribute="bottom" constant="-0.5" id="dWP-M1-tsa"/>
-                                                <constraint firstItem="3Q8-tQ-ggD" firstAttribute="top" secondItem="6Wn-VO-I2P" secondAttribute="top" id="gmB-2b-oSj"/>
-                                                <constraint firstItem="6Wn-VO-I2P" firstAttribute="top" secondItem="TQJ-el-8wT" secondAttribute="top" id="pAu-mf-FTp"/>
-                                                <constraint firstItem="3Q8-tQ-ggD" firstAttribute="leading" secondItem="TQJ-el-8wT" secondAttribute="leadingMargin" id="toR-PP-Keq"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="6Wn-VO-I2P" secondAttribute="bottom" constant="-0.5" id="AAU-GV-Cqj"/>
+                                                <constraint firstItem="3Q8-tQ-ggD" firstAttribute="bottom" secondItem="6Wn-VO-I2P" secondAttribute="bottom" id="F4b-QT-wkl"/>
+                                                <constraint firstItem="6Wn-VO-I2P" firstAttribute="leading" secondItem="3Q8-tQ-ggD" secondAttribute="trailing" constant="17" id="H1O-pJ-0sV"/>
+                                                <constraint firstItem="6Wn-VO-I2P" firstAttribute="trailing" secondItem="TQJ-el-8wT" secondAttribute="trailingMargin" id="Heq-M1-zne"/>
+                                                <constraint firstItem="3Q8-tQ-ggD" firstAttribute="top" secondItem="TQJ-el-8wT" secondAttribute="top" id="Irh-9w-5hP"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="6Wn-VO-I2P" secondAttribute="bottom" constant="65.5" id="Naa-F0-oJS"/>
+                                                <constraint firstItem="6Wn-VO-I2P" firstAttribute="leading" secondItem="3Q8-tQ-ggD" secondAttribute="trailing" constant="17" id="O8f-Tz-D8L"/>
+                                                <constraint firstItem="3Q8-tQ-ggD" firstAttribute="top" secondItem="TQJ-el-8wT" secondAttribute="top" id="WW2-h6-ylM"/>
+                                                <constraint firstItem="3Q8-tQ-ggD" firstAttribute="top" secondItem="6Wn-VO-I2P" secondAttribute="top" id="X5W-5k-GFN"/>
+                                                <constraint firstItem="6Wn-VO-I2P" firstAttribute="trailing" secondItem="TQJ-el-8wT" secondAttribute="trailingMargin" id="Yv4-xz-ag7"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="6Wn-VO-I2P" secondAttribute="trailing" id="ZwP-gQ-Dpd"/>
+                                                <constraint firstItem="3Q8-tQ-ggD" firstAttribute="leading" secondItem="TQJ-el-8wT" secondAttribute="leadingMargin" id="ehw-ko-Jzc"/>
+                                                <constraint firstItem="6Wn-VO-I2P" firstAttribute="trailing" secondItem="TQJ-el-8wT" secondAttribute="trailingMargin" id="gTu-Nl-AWK"/>
+                                                <constraint firstItem="3Q8-tQ-ggD" firstAttribute="bottom" secondItem="6Wn-VO-I2P" secondAttribute="bottom" id="nYd-Ud-EIi"/>
+                                                <constraint firstItem="6Wn-VO-I2P" firstAttribute="top" secondItem="TQJ-el-8wT" secondAttribute="topMargin" constant="-8" id="pyE-U4-nTD"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="3Q8-tQ-ggD" secondAttribute="bottom" constant="-1.5" id="su3-LI-4eh"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="F4b-QT-wkl"/>
+                                                    <exclude reference="Irh-9w-5hP"/>
+                                                    <exclude reference="AAU-GV-Cqj"/>
+                                                    <exclude reference="Naa-F0-oJS"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="customImage" destination="3Q8-tQ-ggD" id="izR-kp-cEg"/>
@@ -92,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="146" y="245"/>
+            <point key="canvasLocation" x="-93" y="197"/>
         </scene>
     </scenes>
 </document>
