@@ -112,10 +112,8 @@ class ViewController: UIViewController, UITableViewDataSource {
     let cell = tableView.dequeueReusableCellWithIdentifier("TWEET_CELL", forIndexPath: indexPath) as CustomTableViewCell
     
     //this var name is what gets the value of user form within user dictionary which is within json
-    var name = self.tweets[indexPath.row].user["name"] as String
+    let name = self.tweets[indexPath.row].user["name"] as String
     
-    //variable referencing the image for each tweet
-    var tweetImage = self.tweets[indexPath.row].user["profile_image_url"] as String
     
     let tweet = self.tweets[indexPath.row]
     
@@ -129,16 +127,17 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     //loading image from Tweet
     
+    //variable referencing the image for each tweet
+    let tweetImage = self.tweets[indexPath.row].user["profile_image_url"] as String
+  
     let imageURL = NSURL(string: tweetImage)
     
-    
+    //adding images by converting code to  data and then to to image
       if let data = NSData(contentsOfURL: imageURL!){
-        //cell.customImage.contentMode = UIViewContentMode.ScaleAspectFit
+        cell.customImage.contentMode = UIViewContentMode.ScaleAspectFit
         cell.customImage.image = UIImage(data: data)
       }
-
-
-    
+ 
     return cell
   }
 
