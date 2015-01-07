@@ -111,17 +111,17 @@ class ViewController: UIViewController, UITableViewDataSource {
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("TWEET_CELL", forIndexPath: indexPath) as CustomTableViewCell
     
-    //this var name is what gets the value of user form within user dictionary which is within json
+    //this var name is what gets the value of user name fromm within user dictionary which is inside json
     let name = self.tweets[indexPath.row].user["name"] as String
-    
-    
+
     let tweet = self.tweets[indexPath.row]
     
     //this after adding CustomTableViewCell.swift - Day1
+    //concatenating tweet text + name
 
     cell.tweetCustomLabel.text = tweet.text + " by " + name
     
-    //setting image background to blue so we can see the image
+    //setting image background to blue so we can see the image.  Will show only if no images is present
     cell.customImage.backgroundColor = UIColor.blueColor()
     
     
@@ -132,7 +132,7 @@ class ViewController: UIViewController, UITableViewDataSource {
   
     let imageURL = NSURL(string: tweetImage)
     
-    //adding images by converting code to  data and then to to image
+    //adding images by converting NSURL to  data and then to to Image
       if let data = NSData(contentsOfURL: imageURL!){
         cell.customImage.contentMode = UIViewContentMode.ScaleAspectFit
         cell.customImage.image = UIImage(data: data)
