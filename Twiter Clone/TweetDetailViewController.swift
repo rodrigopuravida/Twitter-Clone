@@ -12,9 +12,10 @@ class TweetDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+      println("Did I show up")
 
-        // Do any additional setup after loading the view.
-    }
+            }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

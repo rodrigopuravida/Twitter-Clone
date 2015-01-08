@@ -22,6 +22,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     self.tweetTableView.dataSource = self
+    self.tweetTableView.delegate = self
     
     
     //call the network controller method with closure
@@ -53,7 +54,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     cell.tweetCustomLabel.text = tweet.text + " by " + name
     
-    println("userID " + tweet.userId)
+    //printing user id for test
+    //println("userID " + tweet.userId)
     
     //setting image background to blue so we can see the image.  Will show only if no images is present
     cell.customImage.backgroundColor = UIColor.blueColor()
@@ -81,9 +83,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
   }
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    self.tweetTableView.indexPathForSelectedRow()
     
+    let currentUserId = self.tweets[indexPath.row].userId
+    println("this is my user id " + currentUserId)
+    
+    //self.tweetTableView.indexPathForSelectedRow()
+    //super.viewDidAppear(true)
+    let tweetVC = self.storyboard?.instantiateViewControllerWithIdentifier("TweetVC") as TweetDetailViewController
+    self.navigationController?.pushViewController(tweetVC, animated: true)
+  
   }
+  
+  
+
+  
 }
 
 

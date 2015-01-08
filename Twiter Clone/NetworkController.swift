@@ -14,11 +14,6 @@ class NetworkController {
   
   var myTwitterAccount : ACAccount?
   
-//  var url : String
-//  
-//  init(apiToBeCalled : String) {
-//    self.url = apiToBeCalled
-//  }
   
   init() {
     
@@ -112,9 +107,7 @@ class NetworkController {
     
   }
   
-  //func fetchDetailsOnTweet( completionHandler : ([Tweet]?, String) -> ()) {
-  
-  func fetchDetailsOnTweet( completionHandler : (String) -> ()) {
+    func fetchDetailsOnTweet( completionHandler : (String) -> ()) {
     
   }
 
