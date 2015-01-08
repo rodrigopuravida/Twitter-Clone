@@ -10,24 +10,31 @@ import UIKit
 
 class TweetDetailViewController: UIViewController {
   
+  // TODO: remove screenName variable and label
+  
   var tweet : Tweet!
   var networkController : NetworkController!
 
+  @IBOutlet weak var screenNameTweeter: UILabel!
   @IBOutlet weak var detailTweetImage: UIImageView!
   @IBOutlet weak var userTweeterLabel: UILabel!
-  @IBOutlet weak var userTweeterScreenName: UILabel!
+  @IBOutlet weak var detailedTweetText: UILabel!
   
     override func viewDidLoad() {
         super.viewDidLoad()
       
-      println("I did show up in detail controoler")
+      self.userTweeterLabel.text = tweet.username
+      
+      
       
       
       self.networkController.fetchDetailsOnTweet(tweet.userId, completionHandler: { (infoDictionary, errorDescription) -> () in
-        println(infoDictionary)
+        
         if errorDescription == nil {
-//          self.tweet.updateWithInfo(infoDictionary!)
-//          self.favoritesLabel.text = self.tweet.favoriteCount
+          self.tweet.updateWithInfo(infoDictionary!)
+          self.detailedTweetText.text = self.tweet.detailedTweetText
+          self.screenNameTweeter.text = self.tweet.screenName
+
         }
       })
 

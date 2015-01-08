@@ -13,6 +13,9 @@ class Tweet {
   var text : String
   var image : String?
   var userId : String
+  var username : String
+  var detailedTweetText : String?
+  var screenName : String?
   
   //the user is actually a dictionary so we need to create the user as a dictionary and figure out parsing later on the viewcontroller
   var user : [String : AnyObject]
@@ -22,6 +25,13 @@ class Tweet {
     self.user = jsonDictionary["user"] as [String : AnyObject]
     self.image = user["profile_image_url"] as? String
     self.userId = jsonDictionary["id_str"] as String
+    self.username = user["name"] as String
   }
+  
+  func updateWithInfo(infoDictionary : [String : AnyObject]) {
+    self.detailedTweetText = infoDictionary["text"] as? String
+    //self.screenName = infoDictionary["screen_name"] as? String
+    self.screenName = "TESTING"
+   }
 }
 
