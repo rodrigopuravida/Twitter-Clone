@@ -15,8 +15,7 @@ class TweetDetailViewController: UIViewController {
   var tweet : Tweet!
   var networkController : NetworkController!
 
-  @IBOutlet weak var screenNameTweeter: UILabel!
-  @IBOutlet weak var detailTweetImage: UIImageView!
+    @IBOutlet weak var detailTweetImage: UIImageView!
   @IBOutlet weak var userTweeterLabel: UILabel!
   @IBOutlet weak var detailedTweetText: UILabel!
   
@@ -24,6 +23,7 @@ class TweetDetailViewController: UIViewController {
         super.viewDidLoad()
       
       self.userTweeterLabel.text = tweet.username
+      self.detailTweetImage.image = tweet.image
       
       
       
@@ -33,7 +33,7 @@ class TweetDetailViewController: UIViewController {
         if errorDescription == nil {
           self.tweet.updateWithInfo(infoDictionary!)
           self.detailedTweetText.text = self.tweet.detailedTweetText
-          self.screenNameTweeter.text = self.tweet.screenName
+          
 
         }
       })

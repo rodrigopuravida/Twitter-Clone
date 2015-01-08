@@ -15,6 +15,7 @@ class NetworkController {
   // TODO: Fix alert for status codes that don't work
   
   var myTwitterAccount : ACAccount?
+  var imageQueue = NSOperationQueue()
   
   
   init() {
@@ -173,5 +174,26 @@ class NetworkController {
     }
 
   }
+  
+  func fetchImageForTweet(tweet : Tweet, completionHandler: (UIImage?) -> ()) {
+    //image download
+    if let imageURL = NSURL(string: tweet.imageURL!) {
+      //self.imageQueue.maxConcurrentOperationCount = 1
+      self.imageQueue.addOperationWithBlock({ () -> Void in
+        
+        if let imageData = NSData(contentsOfURL: imageURL) {
+          tweet.image = UIImage(data: imageData)
+          NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+            completionHandler(tweet.image)
+          })
+          
+          //return tweet.image!
+          //        cell.tweetImageView.image = tweet.image
+        }
+        
+      })
+    }
+  }
+  
 
 }

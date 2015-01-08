@@ -59,25 +59,28 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     cell.tweetCustomLabel.text = tweet.text + " by " + name
     
-    //printing user id for test
-    //println("userID " + tweet.userId)
-    
-    //setting image background to blue so we can see the image.  Will show only if no images is present
-    cell.customImage.backgroundColor = UIColor.blueColor()
-    
-    
-    //loading image from Tweet
-    
-    //variable referencing the image for each tweet
-    let tweetImage = self.tweets[indexPath.row].user["profile_image_url"] as String
-    
-    let imageURL = NSURL(string: tweetImage)
-    
-    //adding images by converting NSURL to  data and then to to Image
-    if let data = NSData(contentsOfURL: imageURL!){
-      cell.customImage.contentMode = UIViewContentMode.ScaleAspectFit
-      cell.customImage.image = UIImage(data: data)
+    //Lazy loading the images
+    if tweet.image == nil {
+      self.networkController.fetchImageForTweet(tweet, completionHandler: { (image) -> () in
+        self.tweetTableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+      })
+    } else {
+      cell.customImage.image = tweet.image
     }
+
+    
+//    //loading image from Tweet
+//    
+//    //variable referencing the image for each tweet
+//    let tweetImage = self.tweets[indexPath.row].user["profile_image_url"] as String
+//    
+//    let imageURL = NSURL(string: tweetImage)
+//    
+//    //adding images by converting NSURL to  data and then to to Image
+//    if let data = NSData(contentsOfURL: imageURL!){
+//      cell.customImage.contentMode = UIViewContentMode.ScaleAspectFit
+//      cell.customImage.image = UIImage(data: data)
+//    }
     
     return cell
   }

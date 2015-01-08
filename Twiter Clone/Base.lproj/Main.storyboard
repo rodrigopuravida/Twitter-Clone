@@ -145,13 +145,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kgt-RF-O7a">
-                                <rect key="frame" x="100" y="203" width="472" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XnH-dz-Leo">
-                                <rect key="frame" x="100" y="118" width="42" height="21"/>
+                                <rect key="frame" x="100" y="118" width="472" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -160,23 +154,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="Kgt-RF-O7a" secondAttribute="trailing" constant="12" id="3Ti-Cc-sKu"/>
-                            <constraint firstItem="XnH-dz-Leo" firstAttribute="top" secondItem="Tkl-56-q96" secondAttribute="bottom" constant="25.5" id="5R8-0n-MDo"/>
-                            <constraint firstItem="Kgt-RF-O7a" firstAttribute="top" secondItem="XnH-dz-Leo" secondAttribute="bottom" constant="64" id="Kyf-EG-xch"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="XnH-dz-Leo" secondAttribute="trailing" constant="442" id="NJR-r9-iQX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Kgt-RF-O7a" secondAttribute="trailing" constant="12" id="B14-ws-wgh"/>
+                            <constraint firstItem="Kgt-RF-O7a" firstAttribute="leading" secondItem="yeG-iV-ZpQ" secondAttribute="trailing" constant="25" id="J4c-JD-da7"/>
+                            <constraint firstItem="Kgt-RF-O7a" firstAttribute="top" secondItem="Tkl-56-q96" secondAttribute="bottom" constant="25.5" id="PVl-5a-khx"/>
                             <constraint firstItem="Kgt-RF-O7a" firstAttribute="top" secondItem="Tkl-56-q96" secondAttribute="bottom" constant="25" id="Q9D-um-Yd2"/>
                             <constraint firstItem="yeG-iV-ZpQ" firstAttribute="top" secondItem="ISL-Cl-iQR" secondAttribute="bottom" id="SBk-1Q-f4w"/>
                             <constraint firstItem="Tkl-56-q96" firstAttribute="leading" secondItem="yeG-iV-ZpQ" secondAttribute="trailing" constant="25" id="Zkh-Yw-t6q"/>
                             <constraint firstItem="Tkl-56-q96" firstAttribute="top" secondItem="ISL-Cl-iQR" secondAttribute="bottom" constant="8" id="cGd-dB-MRj"/>
                             <constraint firstItem="Kgt-RF-O7a" firstAttribute="leading" secondItem="yeG-iV-ZpQ" secondAttribute="trailing" constant="25" id="fOc-zH-5tI"/>
-                            <constraint firstItem="Kgt-RF-O7a" firstAttribute="top" secondItem="XnH-dz-Leo" secondAttribute="bottom" constant="64" id="i7w-YE-P8g"/>
-                            <constraint firstItem="XnH-dz-Leo" firstAttribute="leading" secondItem="yeG-iV-ZpQ" secondAttribute="trailing" constant="25" id="tUZ-zx-lRS"/>
-                            <constraint firstItem="XnH-dz-Leo" firstAttribute="top" secondItem="Tkl-56-q96" secondAttribute="bottom" constant="25.5" id="wnP-3W-Zff"/>
+                            <constraint firstItem="Q2M-dW-FIW" firstAttribute="top" secondItem="Kgt-RF-O7a" secondAttribute="bottom" constant="461.5" id="z91-SJ-05U"/>
                             <constraint firstItem="yeG-iV-ZpQ" firstAttribute="leading" secondItem="jxA-jc-HT6" secondAttribute="leadingMargin" constant="-16" id="zVS-i8-B9y"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="5R8-0n-MDo"/>
-                                <exclude reference="Kyf-EG-xch"/>
                                 <exclude reference="Q9D-um-Yd2"/>
                             </mask>
                         </variation>
@@ -185,7 +175,6 @@
                     <connections>
                         <outlet property="detailTweetImage" destination="yeG-iV-ZpQ" id="FWB-NB-tsx"/>
                         <outlet property="detailedTweetText" destination="Kgt-RF-O7a" id="VsZ-Qe-gxj"/>
-                        <outlet property="screenNameTweeter" destination="XnH-dz-Leo" id="SWB-1i-Z3U"/>
                         <outlet property="userTweeterLabel" destination="Tkl-56-q96" id="0DL-DS-YK6"/>
                     </connections>
                 </viewController>
