@@ -12,6 +12,10 @@ import Social
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
+  // TODO: Look over Autolayout.  Still some To are chopped up
+  // TODO: Add label for user
+
+  
   var tweets = [Tweet]()
   var singleTweet = [SingeTweet]()
   let networkController = NetworkController()

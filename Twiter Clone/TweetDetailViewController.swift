@@ -13,6 +13,10 @@ class TweetDetailViewController: UIViewController {
   var tweet : Tweet!
   var networkController : NetworkController!
 
+  @IBOutlet weak var detailTweetImage: UIImageView!
+  @IBOutlet weak var userTweeterLabel: UILabel!
+  @IBOutlet weak var userTweeterScreenName: UILabel!
+  
     override func viewDidLoad() {
         super.viewDidLoad()
       

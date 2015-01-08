@@ -12,6 +12,8 @@ import Social
 
 class NetworkController {
   
+  // TODO: Fix alert for status codes that don't work
+  
   var myTwitterAccount : ACAccount?
   
   
