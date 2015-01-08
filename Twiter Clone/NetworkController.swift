@@ -60,10 +60,10 @@ class NetworkController {
             case 200...299:
               
               
-              if let jsonArray = NSJSONSerialization.JSONObjectWithData(data, options: nil, error:nil) as? [AnyObject] {
+              if let jsonDict = NSJSONSerialization.JSONObjectWithData(data, options: nil, error:nil) as? [AnyObject] {
                 
                 var tweets = [Tweet]()
-                for object in jsonArray {
+                for object in jsonDict {
                   if let jsonDictionary = object as? [String : AnyObject] {
                     
                     //instantiate a Tweet class
@@ -108,7 +108,7 @@ class NetworkController {
     
   }
   
-  func fetchDetailsOnTweet( id : String, completionHandler : ([Tweet]?, String?) -> ()) {
+  func fetchDetailsOnTweet( id : String, completionHandler : ([String : AnyObject]?, String?) -> ()) {
     
     //TO DO: Lot of repetiotion here so need to clean this up
     //create my account Store
@@ -160,21 +160,18 @@ class NetworkController {
                 for object in detailsJsonArray {
                   if let jsonDictionary = object as? [String : AnyObject] {
                     
-                    //instantiate a Tweet class
-                    //let tweet = SingleTweet(jsonDictionary) ADD
+                    //this code returns the interface operation to main thread which is the correct way to do this
+                    //now is calling completion handler
+                    //                NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                    //                  completionHandler(tweets, nil)
+                    //                })
+
                     
-                    //add my Tweet object to array of tweets declared on top of class
-                    //tweetDetails.append(tweet) ADD
-                   
+                    
                     
                   }
                 }
                 
-                //this code returns the interface operation to main thread which is the correct way to do this
-                //now is calling completion handler
-//                NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-//                  completionHandler(tweets, nil)
-//                })
                 
               }
               

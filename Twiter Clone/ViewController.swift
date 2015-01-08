@@ -95,8 +95,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
       println("I'm back here")
     })
 
-    
+    //instantiate view controller
     let tweetVC = self.storyboard?.instantiateViewControllerWithIdentifier("TweetVC") as TweetDetailViewController
+    tweetVC.networkController = self.networkController
+    
+    tweetVC.tweet = self.tweets[indexPath.row]
     self.navigationController?.pushViewController(tweetVC, animated: true)
   
   }

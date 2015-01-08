@@ -9,6 +9,9 @@
 import UIKit
 
 class TweetDetailViewController: UIViewController {
+  
+  var tweet : Tweet!
+  var networkController : NetworkController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
