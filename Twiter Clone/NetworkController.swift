@@ -110,8 +110,7 @@ class NetworkController {
   
   func fetchDetailsOnTweet( id : String, completionHandler : ([String : AnyObject]?, String?) -> ()) {
     
-    //TO DO: Lot of repetiotion here so need to clean this up
-    //create my account Store
+    // TODO: refactor this method  and avoid duplication
     let myTwitterAccountStore = ACAccountStore()
     //Of Type Twitter
     let myTwitterAccountType = myTwitterAccountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
@@ -137,44 +136,18 @@ class NetworkController {
           
           detaiTtwitterRequest.account = myTwitterAccount
           
-          detaiTtwitterRequest.performRequestWithHandler(){ (data2, response, error) -> Void in
+          detaiTtwitterRequest.performRequestWithHandler(){ (data, response, error) -> Void in
             
             switch response.statusCode {
               
               //request is succesful
             case 200...299:
-              println("Status Code = \(response.statusCode)")
-       
-              let testArray = NSJSONSerialization.JSONObjectWithData(data2, options: nil, error:nil) as? [String : AnyObject]
               
-              var countTestArray = testArray?.count
-              println("COUNT IN TEST ARRAY is \(countTestArray)")
-              
-              if let detailsJsonArray = NSJSONSerialization.JSONObjectWithData(data2, options: nil, error:nil) as? [AnyObject] {
-                
-                //validation
-                println(data2)
-                println("I am inside jsonArray after deserialization")
-                
-                var tweetDetails = [SingeTweet]()
-                for object in detailsJsonArray {
-                  if let jsonDictionary = object as? [String : AnyObject] {
-                    
-                    //this code returns the interface operation to main thread which is the correct way to do this
-                    //now is calling completion handler
-                    //                NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-                    //                  completionHandler(tweets, nil)
-                    //                })
-
-                    
-                    
-                    
-                  }
-                }
-                
-                
+              if let jsonDictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error:nil) as? [String : AnyObject] {
+                NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                  completionHandler(jsonDictionary, nil)
+                })
               }
-              
             case 300...599:
               
               println("Twitter HTTP response \(response.statusCode)")
@@ -193,16 +166,10 @@ class NetworkController {
 
           }
           
-          
         }
       }
     }
-    
 
-    
-    
-
-    
   }
 
 }

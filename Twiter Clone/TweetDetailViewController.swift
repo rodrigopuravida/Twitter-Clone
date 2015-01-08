@@ -17,6 +17,15 @@ class TweetDetailViewController: UIViewController {
         super.viewDidLoad()
       
       println("I did show up in detail controoler")
+      
+      
+      self.networkController.fetchDetailsOnTweet(tweet.userId, completionHandler: { (infoDictionary, errorDescription) -> () in
+        println(infoDictionary)
+        if errorDescription == nil {
+//          self.tweet.updateWithInfo(infoDictionary!)
+//          self.favoritesLabel.text = self.tweet.favoriteCount
+        }
+      })
 
             }
 
