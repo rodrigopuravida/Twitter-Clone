@@ -10,15 +10,16 @@ import Foundation
 import UIKit
 
 class SingeTweet {
-  var userId : String
   
+  let userId : String
   
+
   //the user is actually a dictionary so we need to create the user as a dictionary and figure out parsing later on the viewcontroller
  
   
-  init( _ singleTweetArray : [String : AnyObject]) {
+  init(singleTweet : [String : AnyObject]) {
     
-    self.userId = singleTweetArray["id_str"] as String
+    self.userId = singleTweet["id_str"] as String
 
   }
   
