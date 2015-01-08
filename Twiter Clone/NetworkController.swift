@@ -107,7 +107,8 @@ class NetworkController {
     
   }
   
-    func fetchDetailsOnTweet( completionHandler : (String) -> ()) {
+  func fetchDetailsOnTweet( String, completionHandler : (SingeTweet?, String?) -> ()) {
+
     
   }
 

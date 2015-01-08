@@ -84,11 +84,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     
+    let currentTweet = self.tweets[indexPath.row]
+    
     let currentUserId = self.tweets[indexPath.row].userId
     println("this is my user id " + currentUserId)
     
-    //self.tweetTableView.indexPathForSelectedRow()
-    //super.viewDidAppear(true)
+    
+    
     let tweetVC = self.storyboard?.instantiateViewControllerWithIdentifier("TweetVC") as TweetDetailViewController
     self.navigationController?.pushViewController(tweetVC, animated: true)
   

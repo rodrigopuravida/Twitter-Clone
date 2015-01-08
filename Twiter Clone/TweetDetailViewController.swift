@@ -13,7 +13,7 @@ class TweetDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       
-      println("Did I show up")
+      println("I did show up")
 
             }
 
