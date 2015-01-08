@@ -77,6 +77,7 @@
                                         <connections>
                                             <outlet property="customImage" destination="3Q8-tQ-ggD" id="izR-kp-cEg"/>
                                             <outlet property="tweetCustomLabel" destination="6Wn-VO-I2P" id="oRw-YJ-1Fl"/>
+                                            <segue destination="cEc-Lz-GvU" kind="show" identifier="TWEET_DETAIL" id="kS0-G9-MSj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -116,7 +117,33 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-93" y="197"/>
+            <point key="canvasLocation" x="-235" y="43"/>
+        </scene>
+        <!--Tweet Detail View Controller-->
+        <scene sceneID="XsN-6p-F57">
+            <objects>
+                <viewController id="cEc-Lz-GvU" customClass="TweetDetailViewController" customModule="Twiter_Clone" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OKJ-c4-VCj"/>
+                        <viewControllerLayoutGuide type="bottom" id="vpv-wO-V1N"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VgV-Xi-JGh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DetailTweet" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wb-bn-Sji">
+                                <rect key="frame" x="122" y="99" width="345" height="274"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cf3-yf-Vop" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="421" y="51"/>
         </scene>
     </scenes>
 </document>

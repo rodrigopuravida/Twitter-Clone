@@ -10,7 +10,7 @@ import UIKit
 import Accounts
 import Social
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
   var tweets = [Tweet]()
   let networkController = NetworkController()
@@ -22,6 +22,9 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     
     self.tweetTableView.dataSource = self
+    
+    
+    //call the network controller method with closure
     self.networkController.fetchTwitterHomeTimeline { (tweets, errorString) -> () in
       if errorString == nil {
         self.tweets = tweets!
@@ -50,6 +53,8 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     cell.tweetCustomLabel.text = tweet.text + " by " + name
     
+    println("userID " + tweet.userId)
+    
     //setting image background to blue so we can see the image.  Will show only if no images is present
     cell.customImage.backgroundColor = UIColor.blueColor()
     
@@ -75,6 +80,12 @@ class ViewController: UIViewController, UITableViewDataSource {
     // Dispose of any resources that can be recreated.
   }
   
-  
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    self.tweetTableView.indexPathForSelectedRow()
+    
+  }
 }
+
+
+  
 

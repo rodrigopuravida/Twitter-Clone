@@ -48,11 +48,13 @@ class NetworkController {
           
           let requestURL = NSURL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json")
           
+          //test
+          //let requestURL = NSURL(string: "https://api.twitter.com/1.1/statuses/show/552968626547224577.json")
+          
           //sending the service request
           let twitterRequest = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: SLRequestMethod.GET, URL: requestURL, parameters: nil)
           
-          
-          
+       
           twitterRequest.account = myTwitterAccount
           
           //here comes the clousure that performs the 'in' section of code after response has been returned from the server
@@ -73,15 +75,12 @@ class NetworkController {
                     
                     //add my Tweet object to array of tweets declared on top of class
                     tweets.append(tweet)
-                    
-//                    //this code returns the interface operation to main thread which is the correct way to do this
-//                    
-//                    NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-//                      
-//                      self.tweetTableView.reloadData()
-                    //})
+
                   }
                 }
+                
+                //this code returns the interface operation to main thread which is the correct way to do this
+                //now is calling completion handler
                 NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                   completionHandler(tweets, nil)
                 })
@@ -110,6 +109,12 @@ class NetworkController {
       }
       
     }
+    
+  }
+  
+  //func fetchDetailsOnTweet( completionHandler : ([Tweet]?, String) -> ()) {
+  
+  func fetchDetailsOnTweet( completionHandler : (String) -> ()) {
     
   }
 
