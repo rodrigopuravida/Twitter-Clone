@@ -10,14 +10,22 @@ import UIKit
 
 class UserTimelineViewController: UIViewController {
   
+  var tweets : [Tweet]!
+  var userTimeLineId : String!
   var networkController : NetworkController!
   
   
+  @IBOutlet weak var lblUserTimeLine: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+      
+      self.networkController.fetchUserTimeline(self.userTimeLineId, completionHandler: { (tweets, errorDescription) -> () in
+      })
 
-        // Do any additional setup after loading the view.
+
+        //Call this method
     }
 
     override func didReceiveMemoryWarning() {

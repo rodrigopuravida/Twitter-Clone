@@ -24,16 +24,18 @@ class TweetDetailViewController: UIViewController {
   @IBAction func showUserTimeLine(sender: AnyObject) {
     
     //instantiate view controller
-    let tweetVC = self.storyboard?.instantiateViewControllerWithIdentifier("USER_TIMELINE") as UserTimelineViewController
-    tweetVC.networkController = self.networkController
-    //tweetVC.tweet = self.tweets[indexPath.row]
-    self.navigationController?.pushViewController(tweetVC, animated: true)
+    let userVC = self.storyboard?.instantiateViewControllerWithIdentifier("USER_TIMELINE") as UserTimelineViewController
+    userVC.networkController = self.networkController
+    userVC.userTimeLineId = self.tweet.userTimeLineID
+    self.navigationController?.pushViewController(userVC, animated: true)
         
   }
     override func viewDidLoad() {
         super.viewDidLoad()
       
       self.userTweeterLabel.text = tweet.username
+      
+      //TODO: change button method
       self.btnUserTimeline.setBackgroundImage(tweet.image, forState: UIControlState.Normal)
       
       self.networkController.fetchDetailsOnTweet(tweet.userId, completionHandler: { (infoDictionary, errorDescription) -> () in

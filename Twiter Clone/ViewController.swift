@@ -17,7 +17,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
   
   var tweets = [Tweet]()
-  var singleTweet = [SingeTweet]()
   let networkController = NetworkController()
   
   @IBOutlet weak var tweetTableView: UITableView!
@@ -80,8 +79,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     let currentTweet = self.tweets[indexPath.row]
     
     let currentUserId = self.tweets[indexPath.row].userId
-    println("this is my user id " + currentUserId)
-    
+        
     //here is where I need to call my function with closure
     self.networkController.fetchDetailsOnTweet(currentUserId, completionHandler: { (SingeTweet, errorString) -> () in
       println("I'm back here")
