@@ -179,9 +179,33 @@ class NetworkController {
     let detaiTtwitterRequest = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: SLRequestMethod.GET, URL: requestURL, parameters: nil)
     
     detaiTtwitterRequest.account = myTwitterAccount
+    
+    detaiTtwitterRequest.performRequestWithHandler(){ (data, response, error) -> Void in
+      
+      switch response.statusCode {
+        
+      default:
+        println("default case fired")
+      
+      
+      }
+      
+    }
+    
+    
+    
   }
 
 
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   //this only called if image is not present
