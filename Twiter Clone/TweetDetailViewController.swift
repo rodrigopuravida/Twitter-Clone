@@ -28,9 +28,6 @@ class TweetDetailViewController: UIViewController {
     tweetVC.networkController = self.networkController
     //tweetVC.tweet = self.tweets[indexPath.row]
     self.navigationController?.pushViewController(tweetVC, animated: true)
-    
-    
-    
         
   }
     override func viewDidLoad() {
@@ -38,7 +35,6 @@ class TweetDetailViewController: UIViewController {
       
       self.userTweeterLabel.text = tweet.username
       self.btnUserTimeline.setBackgroundImage(tweet.image, forState: UIControlState.Normal)
-
       
       self.networkController.fetchDetailsOnTweet(tweet.userId, completionHandler: { (infoDictionary, errorDescription) -> () in
         

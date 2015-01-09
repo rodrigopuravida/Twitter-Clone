@@ -46,9 +46,6 @@ class NetworkController {
           
           let requestURL = NSURL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json")
           
-          //test
-          //let requestURL = NSURL(string: "https://api.twitter.com/1.1/statuses/show/552968626547224577.json")
-          
           //sending the service request
           let twitterRequest = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: SLRequestMethod.GET, URL: requestURL, parameters: nil)
           
@@ -130,8 +127,6 @@ class NetworkController {
           //accesing individual tweet with concatenation of user id
           
           let requestURL = NSURL(string: "https://api.twitter.com/1.1/statuses/show.json?id=\(id)")
-           
-          println(requestURL)
           
           //sending the service request
           let detaiTtwitterRequest = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: SLRequestMethod.GET, URL: requestURL, parameters: nil)
@@ -174,6 +169,19 @@ class NetworkController {
     }
 
   }
+  
+  
+  func fetchUserTimeline(id : String, completionHandler : ([AnyObject]?, String?) -> ()) {
+    
+    let requestURL = NSURL(string: "https://api.twitter.com/1.1/statuses/user_timeline.json?user_id=\(id)")
+    
+    //sending the service request
+    let detaiTtwitterRequest = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: SLRequestMethod.GET, URL: requestURL, parameters: nil)
+    
+    detaiTtwitterRequest.account = myTwitterAccount
+  }
+
+
   
   
   //this only called if image is not present
