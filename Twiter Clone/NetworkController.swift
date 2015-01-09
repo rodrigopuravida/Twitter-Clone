@@ -184,11 +184,33 @@ class NetworkController {
       
       switch response.statusCode {
         
+        //request is succesful
+      case 200...299:
+        
+        if let jsonArray = NSJSONSerialization.JSONObjectWithData(data, options: nil, error:nil) as? [AnyObject] {
+          NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+            completionHandler(jsonArray, nil)
+          })
+        }
+        
+      case 300...599:
+        
+        println("Twitter HTTP response \(response.statusCode)")
+        
+        
+        //display my own alert message
+        let alertController = UIAlertController(title: "Twitter HTTP response \(response.statusCode)", message:
+          "Please Try Again", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+        
+        //presentViewController(alertController, animated: true, completion: nil)
+        
       default:
         println("default case fired")
-      
-      
+        
+        
       }
+      
       
     }
     
