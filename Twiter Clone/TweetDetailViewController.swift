@@ -22,6 +22,15 @@ class TweetDetailViewController: UIViewController {
   @IBOutlet weak var btnUserTimeline: UIButton!
   @IBAction func showUserTimeLine(sender: AnyObject) {
     
+    //instantiate view controller
+    let tweetVC = self.storyboard?.instantiateViewControllerWithIdentifier("USER_TIMELINE") as UserTimelineViewController
+    tweetVC.networkController = self.networkController
+    //tweetVC.tweet = self.tweets[indexPath.row]
+    self.navigationController?.pushViewController(tweetVC, animated: true)
+    
+    
+    
+        
   }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,16 +54,4 @@ class TweetDetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

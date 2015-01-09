@@ -9,6 +9,10 @@
 import UIKit
 
 class UserTimelineViewController: UIViewController {
+  
+  var networkController : NetworkController!
+  
+  
 
     override func viewDidLoad() {
         super.viewDidLoad()

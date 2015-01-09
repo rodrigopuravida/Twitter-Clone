@@ -139,7 +139,6 @@
 			isa = PBXGroup;
 			children = (
 				480FF7921A5B2EE60092C74A /* Main.storyboard */,
-				48C33C031A5F5FB000D61C19 /* UserTimelineViewController.swift */,
 				480FF7971A5B2EE60092C74A /* LaunchScreen.xib */,
 			);
 			name = Views;
@@ -152,6 +151,7 @@
 				480FF7901A5B2EE60092C74A /* ViewController.swift */,
 				48C3D07E1A5E01090032F376 /* TweetDetailViewController.swift */,
 				48C3D07A1A5DDC490032F376 /* NetworkController.swift */,
+				48C33C031A5F5FB000D61C19 /* UserTimelineViewController.swift */,
 				480FF7B51A5B521D0092C74A /* CustomTableViewCell.swift */,
 			);
 			name = Controllers;
