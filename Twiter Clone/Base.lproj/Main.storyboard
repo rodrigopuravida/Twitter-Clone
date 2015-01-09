@@ -141,6 +141,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kgt-RF-O7a">
+                                <rect key="frame" x="109" y="111" width="472" height="202.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tls-Lm-vz9">
                                 <rect key="frame" x="16" y="72" width="75" height="75"/>
                                 <constraints>
@@ -151,8 +157,8 @@
                                     <action selector="showUserTimeLine:" destination="c5k-qk-mbO" eventType="touchUpInside" id="auP-cA-aFE"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kgt-RF-O7a">
-                                <rect key="frame" x="109" y="111" width="472" height="202.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZn-4z-pXz">
+                                <rect key="frame" x="16" y="230" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -160,6 +166,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Q2M-dW-FIW" firstAttribute="top" secondItem="UZn-4z-pXz" secondAttribute="bottom" constant="349" id="0zP-X1-4G1"/>
+                            <constraint firstItem="UZn-4z-pXz" firstAttribute="top" secondItem="tls-Lm-vz9" secondAttribute="bottom" constant="83" id="4Gh-et-dGI"/>
+                            <constraint firstItem="Kgt-RF-O7a" firstAttribute="leading" secondItem="UZn-4z-pXz" secondAttribute="trailing" constant="51" id="6NX-vN-yIm"/>
+                            <constraint firstItem="UZn-4z-pXz" firstAttribute="leading" secondItem="jxA-jc-HT6" secondAttribute="leadingMargin" id="9yA-Vw-7g8"/>
                             <constraint firstItem="tls-Lm-vz9" firstAttribute="top" secondItem="ISL-Cl-iQR" secondAttribute="bottom" constant="8" id="Jqv-g4-pJ4"/>
                             <constraint firstItem="Kgt-RF-O7a" firstAttribute="leading" secondItem="tls-Lm-vz9" secondAttribute="trailing" constant="18" id="Zrv-u8-5in"/>
                             <constraint firstItem="Tkl-56-q96" firstAttribute="top" secondItem="ISL-Cl-iQR" secondAttribute="bottom" constant="8" id="ahg-4U-vnP"/>
@@ -173,6 +183,7 @@
                     <connections>
                         <outlet property="btnUserTimeline" destination="tls-Lm-vz9" id="mqN-8v-ynk"/>
                         <outlet property="detailedTweetText" destination="Kgt-RF-O7a" id="VsZ-Qe-gxj"/>
+                        <outlet property="favoritesCount" destination="UZn-4z-pXz" id="W0q-Do-DuY"/>
                         <outlet property="userTweeterLabel" destination="Tkl-56-q96" id="0DL-DS-YK6"/>
                     </connections>
                 </viewController>

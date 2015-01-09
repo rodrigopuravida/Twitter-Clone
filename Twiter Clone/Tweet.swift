@@ -17,6 +17,7 @@ class Tweet {
   var detailedTweetText : String?
   var screenName : String?
   var image : UIImage?
+  var favoriteCount : String?
   
   //the user is actually a dictionary so we need to create the user as a dictionary and figure out parsing later on the viewcontroller
   var user : [String : AnyObject]
@@ -31,8 +32,8 @@ class Tweet {
   
   func updateWithInfo(infoDictionary : [String : AnyObject]) {
     self.detailedTweetText = infoDictionary["text"] as? String
-    //self.screenName = infoDictionary["screen_name"] as? String
-    self.screenName = "TESTING"
+    let favoriteCountNumber = infoDictionary["favorite_count"] as Int
+    self.favoriteCount = "\(favoriteCountNumber)"
    }
 }
 

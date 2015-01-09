@@ -19,6 +19,7 @@ class TweetDetailViewController: UIViewController {
   @IBOutlet weak var userTweeterLabel: UILabel!
   @IBOutlet weak var detailedTweetText: UILabel!
   
+  @IBOutlet weak var favoritesCount: UILabel!
   @IBOutlet weak var btnUserTimeline: UIButton!
   @IBAction func showUserTimeLine(sender: AnyObject) {
     
@@ -43,8 +44,8 @@ class TweetDetailViewController: UIViewController {
         
         if errorDescription == nil {
           self.tweet.updateWithInfo(infoDictionary!)
-          self.detailedTweetText.text = self.tweet.detailedTweetText 
-
+          self.detailedTweetText.text = self.tweet.detailedTweetText
+          self.favoritesCount.text = self.tweet.favoriteCount
         }
   })
 
