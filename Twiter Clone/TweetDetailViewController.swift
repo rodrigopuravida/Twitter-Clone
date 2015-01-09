@@ -27,8 +27,9 @@ class TweetDetailViewController: UIViewController {
         super.viewDidLoad()
       
       self.userTweeterLabel.text = tweet.username
-      //self.detailTweetImage.image = tweet.image
-      self.btnUserTimeline.imageView?.image = tweet.image
+      self.btnUserTimeline.setBackgroundImage(tweet.image, forState: UIControlState.Normal)
+      
+      // button.setImage(image, forState: .Normal)
 
       
       self.networkController.fetchDetailsOnTweet(tweet.userId, completionHandler: { (infoDictionary, errorDescription) -> () in
