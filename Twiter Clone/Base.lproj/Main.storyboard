@@ -131,21 +131,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yeG-iV-ZpQ">
-                                <rect key="frame" x="0.0" y="64" width="75" height="75"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tkl-56-q96">
+                                <rect key="frame" x="109" y="72" width="358" height="20.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="dUb-4D-GpN"/>
-                                    <constraint firstAttribute="height" constant="75" id="hsC-gV-mq9"/>
+                                    <constraint firstAttribute="width" constant="122" id="4rr-1l-Qq2"/>
+                                    <constraint firstAttribute="height" constant="20.5" id="v7B-qt-qrj"/>
                                 </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tkl-56-q96">
-                                <rect key="frame" x="100" y="72" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kgt-RF-O7a">
-                                <rect key="frame" x="100" y="118" width="472" height="20.5"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tls-Lm-vz9">
+                                <rect key="frame" x="16" y="72" width="75" height="75"/>
+                                <color key="backgroundColor" red="0.97647064920000004" green="0.094117656349999995" blue="0.52549022440000004" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="XtB-Uq-9i0"/>
+                                    <constraint firstAttribute="height" constant="75" id="aYo-K7-E1K"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="showUserTimeLine:" destination="c5k-qk-mbO" eventType="touchUpInside" id="auP-cA-aFE"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kgt-RF-O7a">
+                                <rect key="frame" x="109" y="111" width="472" height="202.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -153,27 +162,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Kgt-RF-O7a" secondAttribute="trailing" constant="12" id="3Ti-Cc-sKu"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Kgt-RF-O7a" secondAttribute="trailing" constant="12" id="B14-ws-wgh"/>
-                            <constraint firstItem="Kgt-RF-O7a" firstAttribute="leading" secondItem="yeG-iV-ZpQ" secondAttribute="trailing" constant="25" id="J4c-JD-da7"/>
-                            <constraint firstItem="Kgt-RF-O7a" firstAttribute="top" secondItem="Tkl-56-q96" secondAttribute="bottom" constant="25.5" id="PVl-5a-khx"/>
-                            <constraint firstItem="Kgt-RF-O7a" firstAttribute="top" secondItem="Tkl-56-q96" secondAttribute="bottom" constant="25" id="Q9D-um-Yd2"/>
-                            <constraint firstItem="yeG-iV-ZpQ" firstAttribute="top" secondItem="ISL-Cl-iQR" secondAttribute="bottom" id="SBk-1Q-f4w"/>
-                            <constraint firstItem="Tkl-56-q96" firstAttribute="leading" secondItem="yeG-iV-ZpQ" secondAttribute="trailing" constant="25" id="Zkh-Yw-t6q"/>
-                            <constraint firstItem="Tkl-56-q96" firstAttribute="top" secondItem="ISL-Cl-iQR" secondAttribute="bottom" constant="8" id="cGd-dB-MRj"/>
-                            <constraint firstItem="Kgt-RF-O7a" firstAttribute="leading" secondItem="yeG-iV-ZpQ" secondAttribute="trailing" constant="25" id="fOc-zH-5tI"/>
-                            <constraint firstItem="Q2M-dW-FIW" firstAttribute="top" secondItem="Kgt-RF-O7a" secondAttribute="bottom" constant="461.5" id="z91-SJ-05U"/>
-                            <constraint firstItem="yeG-iV-ZpQ" firstAttribute="leading" secondItem="jxA-jc-HT6" secondAttribute="leadingMargin" constant="-16" id="zVS-i8-B9y"/>
+                            <constraint firstItem="tls-Lm-vz9" firstAttribute="top" secondItem="ISL-Cl-iQR" secondAttribute="bottom" constant="8" id="Jqv-g4-pJ4"/>
+                            <constraint firstItem="Kgt-RF-O7a" firstAttribute="leading" secondItem="tls-Lm-vz9" secondAttribute="trailing" constant="18" id="Zrv-u8-5in"/>
+                            <constraint firstItem="Tkl-56-q96" firstAttribute="top" secondItem="ISL-Cl-iQR" secondAttribute="bottom" constant="8" id="ahg-4U-vnP"/>
+                            <constraint firstItem="tls-Lm-vz9" firstAttribute="leading" secondItem="jxA-jc-HT6" secondAttribute="leadingMargin" id="bEl-nN-Z5E"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Kgt-RF-O7a" secondAttribute="trailing" constant="3" id="fEQ-L7-8UA"/>
+                            <constraint firstItem="Kgt-RF-O7a" firstAttribute="top" secondItem="Tkl-56-q96" secondAttribute="bottom" constant="18.5" id="obs-i7-ByA"/>
+                            <constraint firstItem="Tkl-56-q96" firstAttribute="leading" secondItem="tls-Lm-vz9" secondAttribute="trailing" constant="18" id="wcI-Cm-iuN"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Q9D-um-Yd2"/>
-                            </mask>
-                        </variation>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="detailTweetImage" destination="yeG-iV-ZpQ" id="FWB-NB-tsx"/>
+                        <outlet property="btnUserTimeline" destination="tls-Lm-vz9" id="mqN-8v-ynk"/>
                         <outlet property="detailedTweetText" destination="Kgt-RF-O7a" id="VsZ-Qe-gxj"/>
                         <outlet property="userTweeterLabel" destination="Tkl-56-q96" id="0DL-DS-YK6"/>
                     </connections>

@@ -15,28 +15,30 @@ class TweetDetailViewController: UIViewController {
   var tweet : Tweet!
   var networkController : NetworkController!
 
-    @IBOutlet weak var detailTweetImage: UIImageView!
+  //@IBOutlet weak var detailTweetImage: UIImageView!
   @IBOutlet weak var userTweeterLabel: UILabel!
   @IBOutlet weak var detailedTweetText: UILabel!
   
+  @IBOutlet weak var btnUserTimeline: UIButton!
+  @IBAction func showUserTimeLine(sender: AnyObject) {
+    
+  }
     override func viewDidLoad() {
         super.viewDidLoad()
       
       self.userTweeterLabel.text = tweet.username
-      self.detailTweetImage.image = tweet.image
-      
-      
-      
+      //self.detailTweetImage.image = tweet.image
+      self.btnUserTimeline.imageView?.image = tweet.image
+
       
       self.networkController.fetchDetailsOnTweet(tweet.userId, completionHandler: { (infoDictionary, errorDescription) -> () in
         
         if errorDescription == nil {
           self.tweet.updateWithInfo(infoDictionary!)
-          self.detailedTweetText.text = self.tweet.detailedTweetText
-          
+          self.detailedTweetText.text = self.tweet.detailedTweetText 
 
         }
-      })
+  })
 
             }
 

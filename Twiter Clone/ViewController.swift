@@ -67,21 +67,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     } else {
       cell.customImage.image = tweet.image
     }
-
-    
-//    //loading image from Tweet
-//    
-//    //variable referencing the image for each tweet
-//    let tweetImage = self.tweets[indexPath.row].user["profile_image_url"] as String
-//    
-//    let imageURL = NSURL(string: tweetImage)
-//    
-//    //adding images by converting NSURL to  data and then to to Image
-//    if let data = NSData(contentsOfURL: imageURL!){
-//      cell.customImage.contentMode = UIViewContentMode.ScaleAspectFit
-//      cell.customImage.image = UIImage(data: data)
-//    }
-    
     return cell
   }
   

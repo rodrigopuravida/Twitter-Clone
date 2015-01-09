@@ -175,10 +175,11 @@ class NetworkController {
 
   }
   
+  
+  //this only called if image is not present
   func fetchImageForTweet(tweet : Tweet, completionHandler: (UIImage?) -> ()) {
     //image download
     if let imageURL = NSURL(string: tweet.imageURL!) {
-      //self.imageQueue.maxConcurrentOperationCount = 1
       self.imageQueue.addOperationWithBlock({ () -> Void in
         
         if let imageData = NSData(contentsOfURL: imageURL) {
@@ -187,13 +188,10 @@ class NetworkController {
             completionHandler(tweet.image)
           })
           
-          //return tweet.image!
-          //        cell.tweetImageView.image = tweet.image
         }
         
       })
     }
-  }
-  
+  }  
 
 }
