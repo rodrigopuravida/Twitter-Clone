@@ -20,6 +20,8 @@ class Tweet {
   var favoriteCount : String?
   var userTimeLineID : String?
   var userTimeLineName : String?
+  var userTimeLineImage : String?
+  var userTimeLineLocation : String?
   
   
   //profile_background_image_url_https
@@ -35,6 +37,9 @@ class Tweet {
     self.userId = jsonDictionary["id_str"] as String
     self.username = user["name"] as String
     self.userTimeLineName = user["name"] as? String
+    self.userTimeLineLocation = user["location"] as? String
+    self.userTimeLineImage = jsonDictionary["profile_background_image_url_https"] as? String
+    
     
   }
   

@@ -10,9 +10,14 @@ import UIKit
 
 class UserTimelineViewController: UIViewController {
   
+  //TODO: Validate for null conditions
+  //TODO: Ger Profile banner
+  
   var tweets : [Tweet]!
   var userTimeLineId : String!
   var userTimeLineName : String!
+  var userTimeLineImage : String!
+  var userTimeLineLocation : String!
   var networkController : NetworkController!
   
   
@@ -20,14 +25,18 @@ class UserTimelineViewController: UIViewController {
   @IBOutlet weak var userTimeLineTableView: UITableView!
   @IBOutlet weak var lblUserTimeLine: UILabel!
   @IBOutlet weak var lblUserTimeLineName: UILabel!
+  @IBOutlet weak var lblUserTimeLineLocation: UILabel!
+
  
 
     override func viewDidLoad() {
       super.viewDidLoad()
       
-      println("me'")
-      
       self.lblUserTimeLineName.text = self.userTimeLineName
+      self.lblUserTimeLineLocation.text = self.userTimeLineLocation
+      
+      
+      
       
       //self.userTimeLineTableView.dataSource = self
       

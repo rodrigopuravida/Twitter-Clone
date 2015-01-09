@@ -23,11 +23,16 @@ class TweetDetailViewController: UIViewController {
   @IBOutlet weak var btnUserTimeline: UIButton!
   @IBAction func showUserTimeLine(sender: AnyObject) {
     
+    println("Clicked the button")
+    
     //instantiate view controller
     let userVC = self.storyboard?.instantiateViewControllerWithIdentifier("USER_TIMELINE") as UserTimelineViewController
     userVC.networkController = self.networkController
     userVC.userTimeLineId = self.tweet.userTimeLineID
     userVC.userTimeLineName = self.tweet.userTimeLineName
+    userVC.userTimeLineImage = self.tweet.userTimeLineImage
+    userVC.userTimeLineLocation = self.tweet.userTimeLineLocation
+    
     
     
     self.navigationController?.pushViewController(userVC, animated: true)
