@@ -138,6 +138,7 @@
 		480FF7AF1A5B2F5C0092C74A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				480FF7B51A5B521D0092C74A /* CustomTableViewCell.swift */,
 				480FF7921A5B2EE60092C74A /* Main.storyboard */,
 				480FF7971A5B2EE60092C74A /* LaunchScreen.xib */,
 			);
@@ -152,7 +153,6 @@
 				48C3D07E1A5E01090032F376 /* TweetDetailViewController.swift */,
 				48C3D07A1A5DDC490032F376 /* NetworkController.swift */,
 				48C33C031A5F5FB000D61C19 /* UserTimelineViewController.swift */,
-				480FF7B51A5B521D0092C74A /* CustomTableViewCell.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";

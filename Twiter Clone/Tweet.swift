@@ -19,6 +19,10 @@ class Tweet {
   var image : UIImage?
   var favoriteCount : String?
   var userTimeLineID : String?
+  var userTimeLineName : String?
+  
+  
+  //profile_background_image_url_https
   
   //the user is actually a dictionary so we need to create the user as a dictionary and figure out parsing later on the viewcontroller
   var user : [String : AnyObject]
@@ -26,10 +30,11 @@ class Tweet {
   init( _ jsonDictionary : [String : AnyObject]) {
     self.text = jsonDictionary["text"] as String
     self.user = jsonDictionary["user"] as [String : AnyObject]
-    self.userTimeLineID = user["id_str"] as String
+    self.userTimeLineID = user["id_str"] as? String
     self.imageURL = user["profile_image_url"] as? String
     self.userId = jsonDictionary["id_str"] as String
     self.username = user["name"] as String
+    self.userTimeLineName = user["name"] as? String
     
   }
   
