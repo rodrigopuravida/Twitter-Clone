@@ -59,7 +59,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //this after adding CustomTableViewCell.swift - Day1
     //concatenating tweet text + name
     
-    cell.tweetLabel.text = tweet.text + " by " + name
+    cell.usernameLabel.text = name
+    
+    cell.tweetLabel.text = tweet.text 
     
     //Lazy loading the images
     if tweet.image == nil {

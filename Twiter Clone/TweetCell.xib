@@ -20,8 +20,8 @@
                             <constraint firstAttribute="width" constant="75" id="h7q-qQ-bQN"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jS-En-FKs">
-                        <rect key="frame" x="96" y="8" width="42" height="20.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jS-En-FKs">
+                        <rect key="frame" x="91" y="8" width="47" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -41,7 +41,7 @@
                     <constraint firstItem="pcW-ZO-LgM" firstAttribute="top" secondItem="zs0-mY-9BB" secondAttribute="topMargin" id="etH-CM-2hi"/>
                     <constraint firstItem="tGg-mc-klj" firstAttribute="top" secondItem="8jS-En-FKs" secondAttribute="bottom" constant="6" id="lL4-0a-hmH"/>
                     <constraint firstItem="tGg-mc-klj" firstAttribute="trailing" secondItem="zs0-mY-9BB" secondAttribute="trailingMargin" id="plP-Hg-RW4"/>
-                    <constraint firstItem="8jS-En-FKs" firstAttribute="leading" secondItem="pcW-ZO-LgM" secondAttribute="trailing" constant="13" id="s6e-At-ANu"/>
+                    <constraint firstItem="8jS-En-FKs" firstAttribute="leading" secondItem="pcW-ZO-LgM" secondAttribute="trailing" constant="8" id="s6e-At-ANu"/>
                     <constraint firstItem="tGg-mc-klj" firstAttribute="leading" secondItem="pcW-ZO-LgM" secondAttribute="trailing" constant="8" id="zve-g4-Kzr"/>
                 </constraints>
             </tableViewCellContentView>
