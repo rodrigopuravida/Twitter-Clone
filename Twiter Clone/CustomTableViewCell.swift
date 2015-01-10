@@ -26,5 +26,16 @@ class CustomTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+  
+  //fix for automatic height issue
+  
+  override func override func layoutSubviews() {
+    super.layoutSubviews()
+    self.contentView.layoutIfNeeded()
+    self.tweetLabel.preferredMaxLayoutWidth = self.tweetLabel.frame.width
+    
+  }
+  
+  
 
 }

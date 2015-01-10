@@ -56,7 +56,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //this after adding CustomTableViewCell.swift - Day1
     //concatenating tweet text + name
     
-    cell.tweetCustomLabel.text = tweet.text + " by " + name
+    cell.tweetLabel.text = tweet.text + " by " + name
     
     //Lazy loading the images
     if tweet.image == nil {
@@ -64,7 +64,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.tweetTableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
       })
     } else {
-      cell.customImage.image = tweet.image
+      cell.tweetImageView.image = tweet.image
     }
     return cell
   }
