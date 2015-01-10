@@ -53,8 +53,20 @@ class TweetDetailViewController: UIViewController {
         if errorDescription == nil {
           self.tweet.updateWithInfo(infoDictionary!)
           self.detailedTweetText.text = self.tweet.detailedTweetText
-          self.favoritesCount.text = self.tweet.favoriteCount
+          
+          //handling whether count is one for proper display
+          
+          if (self.tweet.favoriteCount?.toInt() == 1) {
+            self.favoritesCount.text = self.tweet.favoriteCount! + " Favorite"
+            
+          }
+          else {
+            self.favoritesCount.text = self.tweet.favoriteCount! + " Favorites"
+            
+          }
+
         }
+        
   })
 
             }

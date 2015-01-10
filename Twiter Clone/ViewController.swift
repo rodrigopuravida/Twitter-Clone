@@ -61,7 +61,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     cell.usernameLabel.text = name
     
-    cell.tweetLabel.text = tweet.text 
+    cell.tweetLabel.text = tweet.text   
     
     //Lazy loading the images
     if tweet.image == nil {
