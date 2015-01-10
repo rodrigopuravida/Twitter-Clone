@@ -10,9 +10,11 @@ import UIKit
 
 class CustomTableViewCell: UITableViewCell {
 
-  @IBOutlet weak var tweetCustomLabel: UILabel!
+  @IBOutlet weak var tweetLabel: UILabel!
+  @IBOutlet weak var usernameLabel: UILabel!
   
-  @IBOutlet weak var customImage: UIImageView!
+  
+  @IBOutlet weak var tweetImageView: UIImageView!
   
     override func awakeFromNib() {
         super.awakeFromNib()

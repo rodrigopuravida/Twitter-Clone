@@ -21,6 +21,8 @@ class TweetDetailViewController: UIViewController {
   
   @IBOutlet weak var favoritesCount: UILabel!
   @IBOutlet weak var btnUserTimeline: UIButton!
+  
+  
   @IBAction func showUserTimeLine(sender: AnyObject) {
     
     println("Clicked the button")
