@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserTimelineViewController: UIViewController {
+class UserTimelineViewController: UIViewController, UITableViewDataSource {
   
   //TODO: Validate for null conditions
   //TODO: Ger Profile banner
@@ -27,66 +27,59 @@ class UserTimelineViewController: UIViewController {
   @IBOutlet weak var lblUserTimeLineName: UILabel!
   @IBOutlet weak var lblUserTimeLineLocation: UILabel!
 
- 
 
-    override func viewDidLoad() {
-      super.viewDidLoad()
-      
-      self.lblUserTimeLineName.text = self.userTimeLineName
-      self.lblUserTimeLineLocation.text = self.userTimeLineLocation
-      
-      
-      
-      
-      //self.userTimeLineTableView.dataSource = self
-      
-      self.networkController.fetchUserTimeline(self.userTimeLineId, completionHandler: { (tweets, errorDescription) -> () in
-        
-        
-        
-        
-
-//        self.tweets = tweets
-//        self.userTimeLineTableView.reloadData()
-//        
-      })
-     
-//      func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if let tweets = self.tweets {
-//          return tweets.count
-//        }
-//        else {
-//          return 0
-//        }
-//      }
-      
-//      func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        let cell = userTimeLineTableView.dequeueReusableCellWithIdentifier("USER_TIMELINE_CELL", forIndexPath: indexPath) as CustomTableViewCell
-//        let tweet = self.tweets![indexPath.row]
-//        
-//        return cell
-//        
-//      }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    self.userTimeLineTableView.dataSource = self
+    self.userTimeLineTableView.estimatedRowHeight = 144
+    self.userTimeLineTableView.rowHeight = UITableViewAutomaticDimension
+    self.userTimeLineTableView.registerNib(UINib(nibName: "TweetCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "USER_CELL")
+    self.networkController.fetchUserTimeline(self.userTimeLineId, completionHandler: { (tweets, errorDescription) -> () in
+      self.tweets = tweets
+      self.userTimeLineTableView.reloadData()
+    })
+    // Do any additional setup after loading the view.
+  }
   
-      
-  
-        //Call this method
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    if let tweets = self.tweets {
+      return tweets.count
+    } else {
+      return 0
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+  }
+  
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cell = userTimeLineTableView.dequeueReusableCellWithIdentifier("USER_CELL", forIndexPath: indexPath) as CustomTableViewCell
+    let tweet = self.tweets![indexPath.row]
+    //cell.textLabel?.text = tweet.text
+    cell.tweetLabel.text = tweet.text
+    cell.usernameLabel.text = tweet.username
+    if tweet.image == nil {
+      self.networkController.fetchImageForTweet(tweet, completionHandler: { (image) -> () in
+        //        self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+        cell.tweetImageView.image = tweet.image
+      })
+    } else {
+      cell.tweetImageView.image = tweet.image
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    return cell
+  }
+  
+  /*
+  // MARK: - Navigation
+  
+  // In a storyboard-based application, you will often want to do a little preparation before navigation
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+  // Get the new view controller using segue.destinationViewController.
+  // Pass the selected object to the new view controller.
+  }
+  */
+  
 }
+
+
+
+
+    

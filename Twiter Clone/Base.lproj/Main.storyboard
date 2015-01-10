@@ -74,10 +74,6 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="customImage" destination="3Q8-tQ-ggD" id="izR-kp-cEg"/>
-                                            <outlet property="tweetCustomLabel" destination="6Wn-VO-I2P" id="oRw-YJ-1Fl"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -225,15 +221,6 @@
                                     </subviews>
                                     <color key="backgroundColor" red="0.97647064920000004" green="0.094117656349999995" blue="0.52549022440000004" alpha="1" colorSpace="deviceRGB"/>
                                 </view>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="NKF-gP-nan">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NKF-gP-nan" id="tDE-ul-7Pm">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

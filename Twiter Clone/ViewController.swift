@@ -26,7 +26,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     self.tweetTableView.dataSource = self
+    self.tweetTableView.registerNib(UINib(nibName: "TweetCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "TWEET_CELL")
     self.tweetTableView.delegate = self
+    self.tweetTableView.estimatedRowHeight = 144
+    self.tweetTableView.rowHeight = UITableViewAutomaticDimension
     
     
     //call the network controller method with closure
