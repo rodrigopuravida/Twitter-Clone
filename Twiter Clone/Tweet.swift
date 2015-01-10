@@ -15,6 +15,7 @@ class Tweet {
   var userId : String
   var username : String
   var detailedTweetText : String?
+  var detailedRetweetCount : Int?
   var screenName : String?
   var image : UIImage?
   var favoriteCount : String?
@@ -48,6 +49,7 @@ class Tweet {
     self.screenName = infoDictionary["screen_name"] as? String
     let favoriteCountNumber = infoDictionary["favorite_count"] as Int
     self.favoriteCount = "\(favoriteCountNumber)"
+    self.detailedRetweetCount = infoDictionary["retweet_count"] as? Int
    }
 }
 

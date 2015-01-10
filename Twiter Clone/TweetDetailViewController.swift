@@ -41,7 +41,9 @@ class TweetDetailViewController: UIViewController {
         
   }
     override func viewDidLoad() {
-        super.viewDidLoad()
+      super.viewDidLoad()
+      
+      var retweetCountStrForDisplay : String = ""
       
       self.userTweeterLabel.text = tweet.username
       
@@ -56,12 +58,22 @@ class TweetDetailViewController: UIViewController {
           
           //handling whether count is one for proper display
           
-          if (self.tweet.favoriteCount?.toInt() == 1) {
-            self.favoritesCount.text = self.tweet.favoriteCount! + " Favorite"
+          var retweetCount = self.tweet.detailedRetweetCount!
+          if (retweetCount == 1) {
+             retweetCountStrForDisplay =  "\(retweetCount)" + " RETWEET"
             
           }
           else {
-            self.favoritesCount.text = self.tweet.favoriteCount! + " Favorites"
+             retweetCountStrForDisplay =  "\(retweetCount)" + " RETWEETS"
+            
+          }
+          
+          if (self.tweet.favoriteCount?.toInt() == 1) {
+            self.favoritesCount.text = retweetCountStrForDisplay + "  " + self.tweet.favoriteCount! + " FAVORITE"
+            
+          }
+          else {
+            self.favoritesCount.text = retweetCountStrForDisplay + "  " + self.tweet.favoriteCount! + " FAVORITES"
             
           }
 
