@@ -10,7 +10,8 @@ import UIKit
 
 class TweetDetailViewController: UIViewController {
   
-  // TODO: remove screenName variable and label
+  
+  // TODO: This screem is loading slower - What to DO on this one??
   
   var tweet : Tweet!
   var networkController : NetworkController!

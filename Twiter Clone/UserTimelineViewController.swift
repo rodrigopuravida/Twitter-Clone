@@ -25,7 +25,8 @@ class UserTimelineViewController: UIViewController, UITableViewDataSource {
   @IBOutlet weak var userTimeLineTableView: UITableView!
   @IBOutlet weak var lblUserTimeLine: UILabel!
   @IBOutlet weak var lblUserTimeLineName: UILabel!
-  @IBOutlet weak var lblUserTimeLineLocation: UILabel!
+  @IBOutlet var lblUserTimeLineLocation: [UILabel]!
+
 
 
   override func viewDidLoad() {
