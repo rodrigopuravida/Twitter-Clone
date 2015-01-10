@@ -30,6 +30,12 @@ class UserTimelineViewController: UIViewController, UITableViewDataSource {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    
+    //this populates header
+    self.lblUserTimeLineName.text = self.userTimeLineName
+    //self.lblUserTimeLineLocation.text = self.userTimeLineLocation
+    
     self.userTimeLineTableView.dataSource = self
     self.userTimeLineTableView.estimatedRowHeight = 144
     self.userTimeLineTableView.rowHeight = UITableViewAutomaticDimension
