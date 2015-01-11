@@ -31,31 +31,34 @@ class UserTimelineViewController: UIViewController, UITableViewDataSource {
   @IBOutlet weak var lblUserTimeLine: UILabel!
   @IBOutlet weak var lblUserTimeLineName: UILabel!
   @IBOutlet weak var lblUserTimeLineLocation: UILabel!
-  
-
 
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
     
-    
-    
-    self.networkController.fetchUserBackgroundImage(self.userTimeLineId, completionHandler: { (images, errorDescription) -> () in
+      self.networkController.fetchUserBackgroundImage(self.userTimeLineId, completionHandler: { (images, errorDescription) -> () in
       println("I made to the place I had called to get background image")
       
-
-      
+ 
       self.images = BackGroundImage(images!)
-      println("This is sizes")
-      println(self.images.sizes)
-      
-//      println("This is platform")
-//      println(self.images.platform)
-//      
-//      println("This is url")
-//      println(self.images.url)
-//
-
+      println("This is platform")
+      println(self.images.platform)
+    
+      println("This is url")
+      println(self.images.url)
+        
+      //Loading only one image so doing it this way
+      //TODO: IS this correct way of only loading one image
+        
+      let imageURL = NSURL(string: self.images.url)
+      if let imageData = NSData(contentsOfURL: imageURL!) {
+      //self.userTimeLineHeader.set = UIImage(data: imageData)
+        
+      println("Almost ready to set background on this last controller")
+      self.userTimeLineHeader.backgroundColor = UIColor(patternImage: UIImage(data: imageData)!)
+        
+      }
 
       
     })

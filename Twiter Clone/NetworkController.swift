@@ -244,14 +244,7 @@ class NetworkController {
     }
   }
 
-  
-  
-  
-  
-  
-  
-  
-  
+
   
   
   //this only called if image is not present

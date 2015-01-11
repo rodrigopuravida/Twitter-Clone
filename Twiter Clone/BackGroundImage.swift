@@ -17,8 +17,9 @@ class BackGroundImage {
   
   init( _ jsonDictionary : [String : AnyObject]) {
     
+    //dealing only with mobile platform and getting that url property
+    
     self.sizes = jsonDictionary["sizes"] as [String: AnyObject]
-    //self.platform = jsonDictionary["mobile"] as [String: AnyObject]
     self.platform = self.sizes["mobile"] as [String: AnyObject]
     self.url   = platform["url"] as String
 

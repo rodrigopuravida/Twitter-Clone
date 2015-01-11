@@ -240,7 +240,9 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.97647064920000004" green="0.094117656349999995" blue="0.52549022440000004" alpha="1" colorSpace="deviceRGB"/>
+                                    <accessibility key="accessibilityConfiguration">
+                                        <accessibilityTraits key="traits" none="YES" image="YES"/>
+                                    </accessibility>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="S3q-Og-rP9" secondAttribute="trailing" constant="54" id="BuL-4m-LI5"/>
                                         <constraint firstAttribute="bottom" secondItem="Hya-DY-qPP" secondAttribute="bottom" constant="22" id="IaY-87-GCj"/>
