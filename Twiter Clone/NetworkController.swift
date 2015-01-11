@@ -107,20 +107,6 @@ class NetworkController {
   
   func fetchDetailsOnTweet( id : String, completionHandler : ([String : AnyObject]?, String?) -> ()) {
     
-    // TODO: refactor this method  and avoid duplication
-    let myTwitterAccountStore = ACAccountStore()
-    //Of Type Twitter
-    let myTwitterAccountType = myTwitterAccountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
-    
-    //request access but before make sure to set emulator to be able to access in the settings - CTRL - Shift H
-    myTwitterAccountStore.requestAccessToAccountsWithType(myTwitterAccountType, options: nil) { (granted : Bool, error : NSError!) -> Void in
-      //if account is validated
-      if granted {
-        let accounts = myTwitterAccountStore.accountsWithAccountType(myTwitterAccountType)
-        if !accounts.isEmpty {
-          //if there is actually an account
-          let myTwitterAccount = accounts.first as ACAccount
-          
           //accesing individual tweet with concatenation of user id
           
           let requestURL = NSURL(string: "https://api.twitter.com/1.1/statuses/show.json?id=\(id)")
@@ -159,36 +145,11 @@ class NetworkController {
               println("default case fired")
             }
 
-          }
-          
-        }
-      }
-    }
-
-  }
+          }  }
   
   
   func fetchUserTimeline(id : String, completionHandler : ([Tweet]?, String?) -> ()) {
     
-    
-    // TODO: refactor this method  and avoid duplication
-    let myTwitterAccountStore = ACAccountStore()
-    //Of Type Twitter
-    let myTwitterAccountType = myTwitterAccountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
-
-    //request access but before make sure to set emulator to be able to access in the settings - CTRL - Shift H
-    myTwitterAccountStore.requestAccessToAccountsWithType(myTwitterAccountType, options: nil) { (granted : Bool, error : NSError!) -> Void in
-      
-      //if account is validated
-      if granted {
-        let accounts = myTwitterAccountStore.accountsWithAccountType(myTwitterAccountType)
-        
-        if !accounts.isEmpty {
-          //if there is actually an account
-          let myTwitterAccount = accounts.first as ACAccount
-          
-          //move code here
-          
           let requestURL = NSURL(string: "https://api.twitter.com/1.1/statuses/user_timeline.json?user_id=\(id)")!
           println(requestURL)
           
@@ -248,16 +209,6 @@ class NetworkController {
             }
             
         }
-
-        
-      }
-      
-    }
-    
-  }
-    
-    
-    
   }
 
 
