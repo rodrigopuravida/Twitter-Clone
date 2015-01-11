@@ -33,6 +33,10 @@ class UserTimelineViewController: UIViewController, UITableViewDataSource {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    self.networkController.fetchUserBackgroundImage(self.userTimeLineId, completionHandler: { (tweets, errorDescription) -> () in
+      println("I made to the place I had called to get background image")
+    })
+    
     
     //this populates header
     self.lblUserTimeLineName.text = self.userTimeLineName

@@ -16,6 +16,7 @@
 		480FF7B21A5B347E0092C74A /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480FF7B11A5B347E0092C74A /* Tweet.swift */; };
 		480FF7B41A5B34CC0092C74A /* tweet.json in Resources */ = {isa = PBXBuildFile; fileRef = 480FF7B31A5B34CC0092C74A /* tweet.json */; };
 		480FF7B61A5B521D0092C74A /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480FF7B51A5B521D0092C74A /* CustomTableViewCell.swift */; };
+		4841EE4D1A6225EE0071F6D8 /* BackGroundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4841EE4C1A6225EE0071F6D8 /* BackGroundImage.swift */; };
 		48A1900E1A5E4730001F79C2 /* SingleTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A1900D1A5E4730001F79C2 /* SingleTweet.swift */; };
 		48BD12C31A609A600065B4AF /* TweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48BD12C21A609A600065B4AF /* TweetCell.xib */; };
 		48C33C041A5F5FB000D61C19 /* UserTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C33C031A5F5FB000D61C19 /* UserTimelineViewController.swift */; };
@@ -47,6 +48,7 @@
 		480FF7B11A5B347E0092C74A /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		480FF7B31A5B34CC0092C74A /* tweet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tweet.json; sourceTree = "<group>"; };
 		480FF7B51A5B521D0092C74A /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		4841EE4C1A6225EE0071F6D8 /* BackGroundImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackGroundImage.swift; sourceTree = "<group>"; };
 		487354B31A61D6380034FA11 /* Stacks.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Stacks.playground; sourceTree = "<group>"; };
 		48A1900D1A5E4730001F79C2 /* SingleTweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleTweet.swift; sourceTree = "<group>"; };
 		48BD12C21A609A600065B4AF /* TweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetCell.xib; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				480FF7B11A5B347E0092C74A /* Tweet.swift */,
+				4841EE4C1A6225EE0071F6D8 /* BackGroundImage.swift */,
 				48A1900D1A5E4730001F79C2 /* SingleTweet.swift */,
 				480FF7B31A5B34CC0092C74A /* tweet.json */,
 			);
@@ -277,6 +280,7 @@
 				480FF7B21A5B347E0092C74A /* Tweet.swift in Sources */,
 				480FF7911A5B2EE60092C74A /* ViewController.swift in Sources */,
 				48A1900E1A5E4730001F79C2 /* SingleTweet.swift in Sources */,
+				4841EE4D1A6225EE0071F6D8 /* BackGroundImage.swift in Sources */,
 				480FF7B61A5B521D0092C74A /* CustomTableViewCell.swift in Sources */,
 				480FF78F1A5B2EE60092C74A /* AppDelegate.swift in Sources */,
 				48C3D07F1A5E01090032F376 /* TweetDetailViewController.swift in Sources */,

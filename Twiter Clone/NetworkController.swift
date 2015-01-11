@@ -167,9 +167,6 @@ class NetworkController {
             case 200...299:
               
               println("Twitter HTTP response \(response.statusCode)")
-              
-              
-              
               if let jsonArray = NSJSONSerialization.JSONObjectWithData(data, options: nil, error:nil) as? [AnyObject] {
                 
                 var tweets = [Tweet]()
@@ -194,7 +191,6 @@ class NetworkController {
               
               println("Twitter HTTP response \(response.statusCode)")
               
-              
               //display my own alert message
               let alertController = UIAlertController(title: "Twitter HTTP response \(response.statusCode)", message:
                 "Please Try Again", preferredStyle: UIAlertControllerStyle.Alert)
@@ -204,14 +200,75 @@ class NetworkController {
               
             default:
               println("default case fired")
-              
-              
             }
-            
         }
   }
+  
+  
+  
+  func fetchUserBackgroundImage(id : String, completionHandler : ([Tweet]?, String?) -> ()) {
+    
+    let requestURL = NSURL(string: "https://api.twitter.com/1.1/users/profile_banner.json?user_id=\(id)")!
+    println(requestURL)
+    
+    //sending the service request
+    let detaiTtwitterRequest = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: SLRequestMethod.GET, URL: requestURL, parameters: nil)
+    
+    detaiTtwitterRequest.account = self.myTwitterAccount
+    
+    detaiTtwitterRequest.performRequestWithHandler(){ (data, response, error) -> Void in
+      
+      
+      switch response.statusCode {
+        
+        //request is succesful
+      case 200...299:
+        
+        //let jsonArray = NSJSONSerialization.JSONObjectWithData(data, options: nil, error:nil) as? [String : AnyObject]
+        //println(jsonArray)
+        
+        
+        println("Twitter HTTP response \(response.statusCode)")
+        if let jsonArray = NSJSONSerialization.JSONObjectWithData(data, options: nil, error:nil) as? [String : AnyObject] {
+        
+        
+        
+//          var tweets = [Tweet]()
+//          for object in jsonArray {
+//            if let jsonDictionary = object as? [String : AnyObject] {
+//              
+//              //instantiate a Tweet class
+//              let tweet = Tweet(jsonDictionary)
+//              
+//              //add my Tweet object to array of tweets declared on top of class
+//              tweets.append(tweet)
+//              
+//            }
+//          }
+        
+//          NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+//            completionHandler(tweets, nil)
+//          })
+        }
+        
+      case 300...599:
+        
+        println("Twitter HTTP response \(response.statusCode)")
+        
+      default:
+        println("default case fired")
+      }
+    }
+  }
 
-
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   //this only called if image is not present
