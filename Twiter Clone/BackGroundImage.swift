@@ -11,14 +11,15 @@ import UIKit
 
 class BackGroundImage {
   
-  var sizes : String
+  var sizes : [String: AnyObject]
   var platform : [String : AnyObject]
   var url : String
   
   init( _ jsonDictionary : [String : AnyObject]) {
     
-    self.sizes = jsonDictionary["sizes"] as String
-    self.platform = jsonDictionary["mobile"] as [String: AnyObject]
+    self.sizes = jsonDictionary["sizes"] as [String: AnyObject]
+    //self.platform = jsonDictionary["mobile"] as [String: AnyObject]
+    self.platform = self.sizes["mobile"] as [String: AnyObject]
     self.url   = platform["url"] as String
 
   }

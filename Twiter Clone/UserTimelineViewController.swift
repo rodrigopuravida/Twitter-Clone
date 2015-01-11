@@ -14,12 +14,16 @@ class UserTimelineViewController: UIViewController, UITableViewDataSource {
   //TODO: Ger Profile banner
   
   var tweets : [Tweet]!
-  var images : [BackGroundImage]!
+  var images : BackGroundImage!
   var userTimeLineId : String!
   var userTimeLineName : String!
   var userTimeLineImage : String!
   var userTimeLineLocation : String!
   var networkController : NetworkController!
+  var sizes : [String : AnyObject]!
+  var jsonDictionary : [String : AnyObject]!
+
+  
   
   
   @IBOutlet weak var userTimeLineHeader: UIView!
@@ -34,8 +38,26 @@ class UserTimelineViewController: UIViewController, UITableViewDataSource {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    
+    
     self.networkController.fetchUserBackgroundImage(self.userTimeLineId, completionHandler: { (images, errorDescription) -> () in
       println("I made to the place I had called to get background image")
+      
+
+      
+      self.images = BackGroundImage(images!)
+      println("This is sizes")
+      println(self.images.sizes)
+      
+//      println("This is platform")
+//      println(self.images.platform)
+//      
+//      println("This is url")
+//      println(self.images.url)
+//
+
+
+      
     })
     
     

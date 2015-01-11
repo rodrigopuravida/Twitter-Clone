@@ -84,8 +84,8 @@ class NetworkController {
               
               println("Twitter HTTP response \(response.statusCode)")
               
-              
-              //display my own alert message
+              //TODO:  work an alert message - extra
+              //display my own alert message -
               let alertController = UIAlertController(title: "Twitter HTTP response \(response.statusCode)", message:
                 "Please Try Again", preferredStyle: UIAlertControllerStyle.Alert)
               alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
@@ -233,8 +233,7 @@ class NetworkController {
           })
         }
 
-
-        
+ 
       case 300...599:
         
         println("Twitter HTTP response \(response.statusCode)")
