@@ -206,7 +206,7 @@ class NetworkController {
   
   
   
-  func fetchUserBackgroundImage(id : String, completionHandler : ([Tweet]?, String?) -> ()) {
+  func fetchUserBackgroundImage(id : String, completionHandler : ([BackGroundImage]?, String?) -> ()) {
     
     let requestURL = NSURL(string: "https://api.twitter.com/1.1/users/profile_banner.json?user_id=\(id)")!
     println(requestURL)
@@ -223,33 +223,21 @@ class NetworkController {
         
         //request is succesful
       case 200...299:
+      println("Twitter HTTP response \(response.statusCode)")
         
-        //let jsonArray = NSJSONSerialization.JSONObjectWithData(data, options: nil, error:nil) as? [String : AnyObject]
-        //println(jsonArray)
-        
-        
-        println("Twitter HTTP response \(response.statusCode)")
-        if let jsonArray = NSJSONSerialization.JSONObjectWithData(data, options: nil, error:nil) as? [String : AnyObject] {
-        
-        
-        
-//          var tweets = [Tweet]()
-//          for object in jsonArray {
-//            if let jsonDictionary = object as? [String : AnyObject] {
-//              
-//              //instantiate a Tweet class
-//              let tweet = Tweet(jsonDictionary)
-//              
-//              //add my Tweet object to array of tweets declared on top of class
-//              tweets.append(tweet)
-//              
-//            }
-//          }
-        
-//          NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-//            completionHandler(tweets, nil)
-//          })
+        if let jsonDict = NSJSONSerialization.JSONObjectWithData(data, options: nil, error:nil) as? [AnyObject] {
+          var images = [BackGroundImage]()
+          for object in jsonDict {
+            if let jsonDictionary = object as? [String: AnyObject] {
+              let image = BackGroundImage(jsonDictionary)
+              //adding to array
+              images.append(image)
+              
+            }
+            
+          }
         }
+
         
       case 300...599:
         
