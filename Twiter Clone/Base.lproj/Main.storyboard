@@ -272,10 +272,10 @@
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="lblUserTimeLineLocation" destination="Hya-DY-qPP" id="ZEJ-EI-Vc6"/>
                         <outlet property="lblUserTimeLineName" destination="S3q-Og-rP9" id="BBo-ol-S9G"/>
                         <outlet property="userTimeLineHeader" destination="Z1h-I1-hcf" id="o5D-gl-WI9"/>
                         <outlet property="userTimeLineTableView" destination="pfp-Tw-bq6" id="ZYv-53-mrI"/>
-                        <outletCollection property="lblUserTimeLineLocation" destination="Hya-DY-qPP" collectionClass="NSMutableArray" id="2ip-sm-9zS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8w1-dD-ddJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

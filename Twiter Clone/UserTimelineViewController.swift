@@ -25,7 +25,8 @@ class UserTimelineViewController: UIViewController, UITableViewDataSource {
   @IBOutlet weak var userTimeLineTableView: UITableView!
   @IBOutlet weak var lblUserTimeLine: UILabel!
   @IBOutlet weak var lblUserTimeLineName: UILabel!
-  @IBOutlet var lblUserTimeLineLocation: [UILabel]!
+  @IBOutlet weak var lblUserTimeLineLocation: UILabel!
+  
 
 
 
@@ -35,7 +36,7 @@ class UserTimelineViewController: UIViewController, UITableViewDataSource {
     
     //this populates header
     self.lblUserTimeLineName.text = self.userTimeLineName
-    //self.lblUserTimeLineLocation.text = self.userTimeLineLocation
+    self.lblUserTimeLineLocation.text = self.userTimeLineLocation
     
     self.userTimeLineTableView.dataSource = self
     self.userTimeLineTableView.estimatedRowHeight = 144
