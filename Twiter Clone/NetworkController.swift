@@ -206,7 +206,7 @@ class NetworkController {
   
   
   
-  func fetchUserBackgroundImage(id : String, completionHandler : ([BackGroundImage]?, String?) -> ()) {
+  func fetchUserBackgroundImage(id : String, completionHandler : ([String : AnyObject]?, String?) -> ()) {
     
     let requestURL = NSURL(string: "https://api.twitter.com/1.1/users/profile_banner.json?user_id=\(id)")!
     println(requestURL)
@@ -219,24 +219,20 @@ class NetworkController {
     detaiTtwitterRequest.performRequestWithHandler(){ (data, response, error) -> Void in
       
       
+      //for testing
+//    let jsonDictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error:nil) as? [String : AnyObject]
+//    println(jsonDictionary)
+      
       switch response.statusCode {
         
         //request is succesful
       case 200...299:
-      println("Twitter HTTP response \(response.statusCode)")
-        
-        if let jsonDict = NSJSONSerialization.JSONObjectWithData(data, options: nil, error:nil) as? [AnyObject] {
-          var images = [BackGroundImage]()
-          for object in jsonDict {
-            if let jsonDictionary = object as? [String: AnyObject] {
-              let image = BackGroundImage(jsonDictionary)
-              //adding to array
-              images.append(image)
-              
-            }
-            
-          }
+        if let jsonDictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error:nil) as? [String : AnyObject] {
+          NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+            completionHandler(jsonDictionary, nil)
+          })
         }
+
 
         
       case 300...599:
