@@ -42,20 +42,13 @@ class UserTimelineViewController: UIViewController, UITableViewDataSource {
       
  
       self.images = BackGroundImage(images!)
-      println("This is platform")
-      println(self.images.platform)
-    
-      println("This is url")
-      println(self.images.url)
-        
       //Loading only one image so doing it this way
       //TODO: IS this correct way of only loading one image
         
       let imageURL = NSURL(string: self.images.url)
       if let imageData = NSData(contentsOfURL: imageURL!) {
-      //self.userTimeLineHeader.set = UIImage(data: imageData)
         
-      println("Almost ready to set background on this last controller")
+      //println("Almost ready to set background on this last controller")
       self.userTimeLineHeader.backgroundColor = UIColor(patternImage: UIImage(data: imageData)!)
         
       }
@@ -64,9 +57,14 @@ class UserTimelineViewController: UIViewController, UITableViewDataSource {
     })
     
     
-    //this populates header
+    //this populates header - setting user name
     self.lblUserTimeLineName.text = self.userTimeLineName
+    self.lblUserTimeLineName.font = UIFont.boldSystemFontOfSize(14)
+    
+    //setting user location
+    
     self.lblUserTimeLineLocation.text = self.userTimeLineLocation
+    self.lblUserTimeLineLocation.font = UIFont.boldSystemFontOfSize(14)
     
     self.userTimeLineTableView.dataSource = self
     self.userTimeLineTableView.estimatedRowHeight = 144

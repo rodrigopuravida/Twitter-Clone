@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+//TODO: This class is not used on this project.  Was going to be but scrapped it.  Need to delete
+
 class SingeTweet {
   
   let userId : String
